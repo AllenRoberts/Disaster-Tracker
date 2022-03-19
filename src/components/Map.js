@@ -12,13 +12,25 @@ const Map = ({ eventData, center, zoom }) => {
       lng={ev.geometries[0].coordinates[0]} 
       markerType='Fire'
       onClick={() => setLocationInfo({id: ev.id, title:ev.title})} />
-    }
-    else if (ev.categories[0].id === 12){
-      return <LocationMarker lat={ev.geometries[0].coordinates[1]} 
-      lng={ev.geometries[0].coordinates[0]} 
-      markerType='Volcano'
-      onClick={() => setLocationInfo({id: ev.id, title:ev.title})} />
-    }
+    }else if (ev.categories[0].id === 10){
+        return <LocationMarker lat={ev.geometries[0].coordinates[1]} 
+        lng={ev.geometries[0].coordinates[0]} 
+        markerType='Storm'
+        onClick={() => setLocationInfo({id: ev.id, title:ev.title})} />
+      }
+      else if (ev.categories[0].id === 12){
+        return <LocationMarker lat={ev.geometries[0].coordinates[1]} 
+        lng={ev.geometries[0].coordinates[0]} 
+        markerType='Volcano'
+        onClick={() => setLocationInfo({id: ev.id, title:ev.title})} />
+      }
+      else if (ev.categories[0].id === 15){
+        return <LocationMarker lat={ev.geometries[0].coordinates[1]} 
+        lng={ev.geometries[0].coordinates[0]} 
+        markerType='Ice'
+        onClick={() => setLocationInfo({id: ev.id, title:ev.title})} />
+      }
+        
     return null;
   });
 
