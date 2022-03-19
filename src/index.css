@@ -52,8 +52,8 @@ body {
   position: absolute;
   top: 80px;
   right: 50px;
-  width: 400px;
-  min-height: 200px;
+  width: 50%px;
+  min-height: 10%px;
   padding: 20px;
   background-color: rgba(0,0,0,0.6);
   border-radius: 10px;
