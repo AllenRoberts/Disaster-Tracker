@@ -8,11 +8,20 @@ const Map = ({ eventData, center, zoom }) => {
 
   const markers = eventData.map(ev => {
     if (ev.categories[0].id === 8) {
-      return <LocationMarker lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]} onClick={() => setLocationInfo({id: ev.id, title:ev.title})} />
+      return <LocationMarker lat={ev.geometries[0].coordinates[1]} 
+      lng={ev.geometries[0].coordinates[0]} 
+      markerType='Fire'
+      onClick={() => setLocationInfo({id: ev.id, title:ev.title})} />
+    }
+    else if (ev.categories[0].id === 12){
+      return <LocationMarker lat={ev.geometries[0].coordinates[1]} 
+      lng={ev.geometries[0].coordinates[0]} 
+      markerType='Volcano'
+      onClick={() => setLocationInfo({id: ev.id, title:ev.title})} />
     }
     return null;
   });
-  
+
   return (
     <div className="map">
       <GoogleMapReact
